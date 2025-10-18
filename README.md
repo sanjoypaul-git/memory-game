@@ -1,43 +1,91 @@
-# Svelte + Vite
+# Memory Game App
 
-This template should help get you started developing with Svelte in Vite.
+**Project Name:** Memory Game
 
-## Recommended IDE Setup
+## Table of contents
+- [Overview](#overview)
+- [Game Rules](#game-rules)
+- [Core Features](#core-features)
+- [Out of Scope](#out-of-scope)
+- [Run the project locally](#run-the-project-in-locally)
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+## Overview
 
-## Need an official Svelte framework?
+The Memory Game is a classic, browser-based card-matching game designed to be fun. The primary goal is to provide users a simple, challenging game to test and improve their memory and concentration skills. This project will serve as a showcase for modern frontend development practices, featuring a clean UI, smooth animations, and responsive design.
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+## Game Rules
 
-## Technical considerations
+The game consists of a grid of face-down cards. Each card has a matching pair. The player flips two cards per turn to find all the matches. The goal is to find all matching pairs.
 
-**Why use this over SvelteKit?**
+**Core Rules:**
+* A deck of identical card pairs is shuffled and displayed face-down in a grid.
+* On each turn, a player flips two cards.
+* If the two cards match, they remain face-up.
+* If they don't match, they are flipped back face-down after a short delay.
+* The game ends when all pairs have been found.
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+**Game Modes:**
+* **Single-Player Mode**
+  * The single-player version is a test of own memory and skill. To clear the entire board of all pairs in as few moves (or as little time) as possible.
+  * **Scoring:** Performance is tracked by total moves and completion time. The goal is to minimize both.
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+* **Multiplayer Mode (Future Consideration)**
+  * Max 4 players take turns.
+  * If a player finds a match, they score a point and get another turn.
+  * If not, the turn passes to the next player.
+  * The player with the highest number of matched pairs win.
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+## Core Features
 
-**Why include `.vscode/extensions.json`?**
+* **Responsive Game Board:**
+  * Responsive card grid that works on desktop, tablet, and mobile.
+  * Configurable grid sizes (e.g., 4x4, 6x6) for difficulty.
+* **Game Logic:**
+  * Card shuffle on game start.
+  * Pair matching logic with visual feedback (match/no-match).
+  * Game end detection (all pairs found).
+* **Game Modes & Configuration:**
+  * **Single-Player Mode:** Play against the clock and your own best score.
+  * **Difficulty Settings:** Adjustable grid sizes (e.g., 4x4 for "Easy," 6x6 for "Hard").
+* **Game State Tracking:** 
+  * **Move Counter:** Counts the number of turns taken.
+  * **Timer:** Tracks the elapsed time for the current game session.
+* **User Controls:**
+  * **Start/Restart Button:** Allows the user to begin a new game or reset the current one.
+  * **New Game Button:** Starts a completely new game with a fresh set of cards.
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+## Out of Scope
+The following features are explicitly not part of the initial release but can be considered for future versions:
 
-**Why enable `checkJs` in the JS template?**
+* User leaderboards, or persistent score history.
+* Customizable card themes (images/icons, colors) for the user to choose from.
+* Complex animations or 3D effects.
+* Multiplayer functionality.
 
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
+## Run the project in locally
 
-**Why is HMR not preserving my local component state?**
+Clone this repository -
 
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
+```sh
+git clone https://github.com/sanjoypaul-git/memory-game.git
 ```
+
+Go to the project directory
+
+```sh
+cd memory-game
+```
+
+install the dependencies
+
+```sh
+npm install
+```
+
+start the development server
+
+```sh
+npm run dev
+```
+
+Your app should be available in http://localhost:5173/
