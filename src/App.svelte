@@ -1,16 +1,10 @@
 <script>
-  
+import Header from "@/components/Header.svelte"
 </script>
 
 <main>
-  <h1>Memory Game</h1>
+  <Header />
 </main>
 
 <style lang="scss">
-  h1 {
-    font-size: 30px;
-    font-weight: 700;
-    color: $primary;
-    margin: 0;
-  }
 </style>
