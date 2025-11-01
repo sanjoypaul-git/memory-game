@@ -6,7 +6,7 @@
   {@render props.children?.()}
 </button>
 
-<style>
+<style lang="scss">
   .btn {
     background: #65B891;
     border: none;
