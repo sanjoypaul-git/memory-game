@@ -45,5 +45,12 @@ shuffleEmojis()
   .main {
     width: 1200px;
     padding: 10px;
+    .board {
+      max-width: fit-content;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, auto);
+      gap: 10px;
+    }
   }
 </style>
