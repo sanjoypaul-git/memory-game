@@ -34,7 +34,11 @@ shuffleEmojis()
 
 <main class="main">
   <Header />
-  <Card />
+  <div class="board">
+    {#each cards as card}
+      <Card emoji={card} />
+    {/each}
+  </div>
 </main>
 
 <style lang="scss">

@@ -1,12 +1,13 @@
 <script>
   let flipped = $state(false)
+  const { emoji } = $props()
 </script>
 
 <button
   class="card {flipped ? 'flipped' : ''}"
   onclick={() => flipped = !flipped}
 >
-  <div class="front">🍒</div>
+  <div class="front">{emoji}</div>
   <div class="back">
     <div class="pattern"></div>
   </div>
